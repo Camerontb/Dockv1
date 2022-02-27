@@ -1,3 +1,14 @@
-html{
-    font-size: 15px;;
+/* font-family: 'Dancing Script', cursive;
+font-family: 'Forum', cursive;
+font-family: 'Poiret One', cursive;
+font-family: 'Roboto', sans-serif; */
+
+
+h1{
+    font-size: 78px;
+    font-family: 'Dancing Script', cursive;
+    text-align: center;
+    padding: 15px;
+
 }
+
