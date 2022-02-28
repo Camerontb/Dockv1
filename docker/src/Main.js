@@ -4,6 +4,7 @@ import { Component } from "react/cjs/react.production.min";
 // import { Component } from "react/cjs/react.production.min";
 import Title from "./Title";
 import CardExampleGroups from "./CardExampleGroups"
+import Create from "./Create";
 
 class Main extends Component{
     render(){
@@ -11,6 +12,7 @@ class Main extends Component{
             <div>
                 <Title title="Dockit"/>
                 <CardExampleGroups/>
+                <Create/>
             </div>
         )
     }
