@@ -2,7 +2,11 @@
 font-family: 'Forum', cursive;
 font-family: 'Poiret One', cursive;
 font-family: 'Roboto', sans-serif; */
-
+body{
+    
+    
+    
+}
 
 h1{
     font-size: 78px;
@@ -13,6 +17,31 @@ h1{
 }
 
 .ui.cards{
-    margin-left: 41%;
+  
+   
+   
+    
 }
 
+.ui.form{
+    padding:10px;
+    border:solid rgb(242, 237, 237);
+    margin-top:08px;
+  
+
+}
+
+.ui.button{
+    text-align: center;
+    margin: auto;
+    background-color: cadetblue;
+    /* position: absolute; */
+}
+
+.Maindiv{
+  position: absolute;
+  top:25%;
+  left: 50%;
+  transform: translate(-50% , -50%)
+    
+}

@@ -9,7 +9,7 @@ import App from './App'
 class Main extends Component{
     render(){
         return(
-            <div>
+            <div className="Maindiv">
                 <Title title="Dockit"/>
                 <CardExampleGroups/>
                 <App/> 

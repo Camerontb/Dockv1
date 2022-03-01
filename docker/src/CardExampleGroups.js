@@ -10,20 +10,18 @@ const CardExampleGroups = () => (
           size='mini'
           src='/images/avatar/large/steve.jpg'
         />
-        <Card.Header>Steve Sanders</Card.Header>
-        <Card.Meta>Friends of Elliot</Card.Meta>
+        <Card.Header>Lodge a new expanse</Card.Header>
+        
         <Card.Description>
-          Steve wants to add you to the group <strong>best friends</strong>
+          Quickly add a new reciept 
         </Card.Description>
       </Card.Content>
       <Card.Content extra>
         <div className='ui two buttons'>
           <Button basic color='green'>
-            Approve
+            Add Expanse
           </Button>
-          <Button basic color='red'>
-            Decline
-          </Button>
+          
         </div>
       </Card.Content>
     </Card>

@@ -29,7 +29,7 @@ const App =()=>{
           placeholder='how much was it' 
           type="number" 
           name='total' 
-          {...register('vendor')}  
+          {...register('Total')}  
 
         />
       </Form.Field>
