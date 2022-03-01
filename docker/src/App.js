@@ -1,5 +1,5 @@
 import React from 'react'
-import {useForm} from 'react-hook-form'
+import {useForm} from 'react-hook-form';
 import { Component } from 'react/cjs/react.production.min';
 import { Button, Checkbox, Form } from 'semantic-ui-react'
 

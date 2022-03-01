@@ -10,7 +10,7 @@ class Main extends Component{
     render(){
         return(
             <div className="Maindiv">
-                <Title title="Dockit"/>
+                <Title title="DockIt "/>
                 <CardExampleGroups/>
                 <App/> 
             </div>

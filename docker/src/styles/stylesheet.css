@@ -33,7 +33,8 @@ h1{
 
 .ui.button{
     text-align: center;
-    margin: auto;
+    
+    left: 30%;
     background-color: cadetblue;
     /* position: absolute; */
 }
