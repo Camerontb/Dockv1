@@ -1,5 +1,5 @@
 import React from 'react'
-import useForm from 'react-hook-form'
+import {useForm} from 'react-hook-form'
 import { Component } from 'react/cjs/react.production.min';
 import { Button, Checkbox, Form } from 'semantic-ui-react'
 
@@ -19,7 +19,7 @@ const App =()=>{
           id='vendor' 
           placeholder='Name of Shop' 
           name='vendor' 
-          ref={register}  
+          {...register('Vendor')}  
         />
       </Form.Field>
 
@@ -29,7 +29,7 @@ const App =()=>{
           placeholder='how much was it' 
           type="number" 
           name='total' 
-          ref={register}  
+          {...register('vendor')}  
 
         />
       </Form.Field>

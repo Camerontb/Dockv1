@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+// import ReactDOM from "react-dom";
 import { Component } from "react/cjs/react.production.min";
 // import { Component } from "react/cjs/react.production.min";
 import Title from "./Title";
@@ -12,7 +12,7 @@ class Main extends Component{
             <div>
                 <Title title="Dockit"/>
                 <CardExampleGroups/>
-                <App/>
+                <App/> 
             </div>
         )
     }

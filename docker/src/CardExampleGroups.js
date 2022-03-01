@@ -2,16 +2,16 @@ import React from 'react'
 import { Button, Card, Image } from 'semantic-ui-react'
 
 const CardExampleGroups = () => (
-  <Card.Group >
-    <Card className="inputtab">
-      <Card.Content>
+  <Card.Group className= "homeBox">
+    <Card >
+      <Card.Content >
         <Image
           floated='right'
           size='mini'
           src='/images/avatar/large/steve.jpg'
         />
-        <Card.Header>Create New Expanse</Card.Header>
-        
+        <Card.Header>Steve Sanders</Card.Header>
+        <Card.Meta>Friends of Elliot</Card.Meta>
         <Card.Description>
           Steve wants to add you to the group <strong>best friends</strong>
         </Card.Description>
@@ -19,9 +19,11 @@ const CardExampleGroups = () => (
       <Card.Content extra>
         <div className='ui two buttons'>
           <Button basic color='green'>
-           New 
+            Approve
           </Button>
-          
+          <Button basic color='red'>
+            Decline
+          </Button>
         </div>
       </Card.Content>
     </Card>
