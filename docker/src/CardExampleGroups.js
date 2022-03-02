@@ -1,7 +1,9 @@
 import React from 'react'
 import { Button, Card, Image } from 'semantic-ui-react'
+import App from './App'
 
 const CardExampleGroups = () => (
+  
   <Card.Group className= "homeBox">
     <Card >
       <Card.Content >
@@ -18,7 +20,7 @@ const CardExampleGroups = () => (
       </Card.Content>
       <Card.Content extra>
         <div className='ui two buttons'>
-          <Button basic color='green'>
+          <Button basic color='green' onClick={App}>
             Add Expanse
           </Button>
           

@@ -30,15 +30,15 @@ const App =()=>{
           type="number" 
           name='total' 
           {...register('Total')}  
-
         />
       </Form.Field>
-      <Form.Field>
-        {/* <Checkbox label='Taxable Expanse'name='type'/> */}
-        {/* <Checkbox label='Personal Expanse' /> */}
 
+      <Form.Field>
+        <label>Reciept</label>
+        <input type="file"/>
       </Form.Field>
-      <Button type='submit'>Submit</Button>
+      
+      <Button type='submit' {...register("location")}>Submit</Button>
     </Form>
   )
 

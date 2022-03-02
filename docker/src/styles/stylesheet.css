@@ -2,11 +2,11 @@
 font-family: 'Forum', cursive;
 font-family: 'Poiret One', cursive;
 font-family: 'Roboto', sans-serif; */
-body{
+/* body{
     
     
     
-}
+} */
 
 h1{
     font-size: 78px;
@@ -16,17 +16,18 @@ h1{
 
 }
 
-.ui.cards{
+/* .ui.cards{
   
    
    
     
-}
+} */
 
 .ui.form{
     padding:10px;
     border:solid rgb(242, 237, 237);
-    margin-top:08px;
+    margin-top:18px;
+    
   
 
 }
@@ -41,7 +42,7 @@ h1{
 
 .Maindiv{
   position: absolute;
-  top:25%;
+  top:45%;
   left: 50%;
   transform: translate(-50% , -50%)
     
