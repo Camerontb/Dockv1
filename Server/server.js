@@ -15,16 +15,27 @@ app.post('/EXP', (req,res)=> {
     const Vendor =req.body.data.Vendor
     const Total= req.body.data.Total
     
-    const ADD_QUERY = `INSERT INTO app (vendor) VALUES ('test')`;
-    pool.execute(ADD_QUERY,(err)=>{
+    const ADD_QUERY =  `INSERT INTO Dockit (Vendor, Total) VALUES ('${Vendor}','${Total}')`;
+
+    connection.query(ADD_QUERY,(err)=>{
       if(err)console.log(err)
-      else res.send('youve got this')
-      res.send('You can add your dockets here')
+
+      
 
     })
 
     
 })
+
+// app.get('/table',(req,res)=>{
+//   connection.query(`SELECT * FROM Dockit order by id desc limit 2  `, (err, rows, fields, results)=>{
+//     if (err) throw err
+//     console.log(res)
+    
+//   })
+
+
+// })
 
 app.listen(4000,()=>{
   console.log('Running on port 4000')
