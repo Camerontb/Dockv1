@@ -2,16 +2,18 @@ import React from 'react'
 import {useForm} from 'react-hook-form';
 import { Component } from 'react/cjs/react.production.min';
 import { Button, CardDescription, Checkbox, Form } from 'semantic-ui-react'
-import CardExampleGroups from './CardExampleGroups';
+import LodgeNew from './LodgeNew';
 import ResultGroups from './ResultsGroups';
-import TableExamplePagination from './Table'
+import TableExamplePagination from './Records'
+import Records from './Records';
 const App =()=>{
 
   return(
     <div>
-      <CardExampleGroups/>
+      <LodgeNew/>
       <ResultGroups/>
-      <TableExamplePagination/>
+      
+      {/* <TableExamplePagination/> */}
 
 
     </div>

@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import { Button, Card, Image } from 'semantic-ui-react'
 import App from './App'
-import Form from './UserForm'
-import CardExampleGroups from './CardExampleGroups'
+// import Form from './UserForm'
+// import CardExampleGroups from './LodgeNew'
+import Records from './Records'
 const ResultGroups = () => {
-  const [isVisible, setVisible] = useState(true)
+  const [isVisible, setVisible] = useState(false)
 
-  const handleClick = () => {
-    setVisible(false)
+  const handleClick1 = () => {
+    console.log("you clicked")
+    setVisible(true)
   }
 
   return (
@@ -26,13 +28,15 @@ const ResultGroups = () => {
           </Card.Content>
           <Card.Content extra>
             <div className="ui two buttons">
-              <Button basic color="green" onClick={handleClick}>
+              <Button basic color="green" onClick={handleClick1}>
                 Review 
               </Button>
             </div>
           </Card.Content>
         </Card>
       </Card.Group>
+      {isVisible && <Records/>}
+
       
       
 

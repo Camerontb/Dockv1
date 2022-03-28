@@ -1,17 +1,16 @@
 const express = require('express')
-const cors = require ('cors')
-const bodyParser = require('body-parser');
-const connection = require('./db');
+const cors = require('cors')
+const bodyParser = require('body-parser')
+const connection = require('./db')
 
-
-const app = express();
-app.use(cors());
+const app = express()
+app.use(cors())
 app.use(bodyParser.json())
 
 
 app.post('/EXP', (req,res)=> {
     console.log(req.body)
-    console.log(connection)
+    // console.log(connection)
     const Vendor =req.body.data.Vendor
     const Total= req.body.data.Total
     
@@ -19,6 +18,8 @@ app.post('/EXP', (req,res)=> {
 
     connection.query(ADD_QUERY,(err)=>{
       if(err)console.log(err)
+        
+      
 
       
 
@@ -39,7 +40,4 @@ app.post('/EXP', (req,res)=> {
 
 app.listen(4000,()=>{
   console.log('Running on port 4000')
-
 })
-
-

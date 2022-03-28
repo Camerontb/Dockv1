@@ -3,7 +3,7 @@ import React from "react";
 import { Component } from "react/cjs/react.production.min";
 // import { Component } from "react/cjs/react.production.min";
 import Title from "./Title";
-import CardExampleGroups from "./CardExampleGroups"
+import CardExampleGroups from "./LodgeNew"
 import App from './App'
 
 class Main extends Component{

@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react'
 import { Button, Card, Image } from 'semantic-ui-react'
 import App from './App'
 import Form from './UserForm'
-const CardExampleGroups = () => {
+const LodgeNew = () => {
   const [isVisible, setVisible] = useState(false)
 
   const handleClick = () => {
     setVisible(true)
   }
-
+// SMALL BOX Thing 
   return (
     <>
       <Card.Group className="homeBox">
@@ -39,4 +39,4 @@ const CardExampleGroups = () => {
   )
 }
 
-export default CardExampleGroups
+export default LodgeNew
