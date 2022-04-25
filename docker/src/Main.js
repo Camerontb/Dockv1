@@ -5,6 +5,7 @@ import { Component } from "react/cjs/react.production.min";
 import Title from "./Title";
 import CardExampleGroups from "./LodgeNew"
 import App from './App'
+import Posts from './Posts'
 
 class Main extends Component{
     render(){
@@ -13,6 +14,7 @@ class Main extends Component{
                 <Title title="DockIt "/>
                 {/* <CardExampleGroups/> */}
                 <App/>
+                <Posts/>
             </div>
         )
     }

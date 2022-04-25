@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Button, Card, Image } from 'semantic-ui-react'
-import App from './App'
+// import App from './App'
 // import Form from './UserForm'
 // import CardExampleGroups from './LodgeNew'
 import Records from './Records'
@@ -12,6 +12,12 @@ const ResultGroups = () => {
     setVisible(true)
   }
 
+
+
+
+
+
+  
   return (
     <>
       <Card.Group className="homeBox">

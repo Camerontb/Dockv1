@@ -6,6 +6,7 @@ import LodgeNew from './LodgeNew';
 import ResultGroups from './ResultsGroups';
 import TableExamplePagination from './Records'
 import Records from './Records';
+
 const App =()=>{
 
   return(

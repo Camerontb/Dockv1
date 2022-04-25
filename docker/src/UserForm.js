@@ -7,7 +7,7 @@ export default function UserForm() {
   const { register, handleSubmit } = useForm()
   const onSubmit = (data) => {
     console.log(data)
-    axios.post('http://localhost:4000/exp',{
+    axios.post('http://localhost:4000/tre',{
       data
       
 
