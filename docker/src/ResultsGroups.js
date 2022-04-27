@@ -3,7 +3,8 @@ import { Button, Card, Image } from 'semantic-ui-react'
 // import App from './App'
 // import Form from './UserForm'
 // import CardExampleGroups from './LodgeNew'
-import Records from './Records'
+// import Records from './Records'
+import Posts from './Posts'
 const ResultGroups = () => {
   const [isVisible, setVisible] = useState(false)
 
@@ -41,7 +42,7 @@ const ResultGroups = () => {
           </Card.Content>
         </Card>
       </Card.Group>
-      {isVisible && <Records/>}
+      {isVisible && <Posts/>}
 
       
       

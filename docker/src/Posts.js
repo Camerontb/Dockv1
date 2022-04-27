@@ -1,42 +1,67 @@
 
 import React, { useEffect,useState} from "react"
 import axios from "axios"
+import _ from "lodash"
+// import pagination from "pagination"
 
 
-
-
+const pageSize = 10 
 const Posts= ()=>{
     const [posts , setposts] = useState()
+    const [paginatedPosts, setpaginatedPosts] = useState()
+    const [currentPage, setcurrentPage] = useState()
     useEffect(()=>{
         axios.get('http://192.168.0.8:4000/test')
         .then((res, data)=>{
             console.log(res.data)
 
             setposts(res.data)
+            setpaginatedPosts(_(res.data).slice(0).take(pageSize).value())
 
         })
 
     },[])
     // console.log(setposts,posts)
+    const pageCount = posts? Math.ceil(posts.length/pageSize):5;
+    if (pageCount === 1) return null;
+    const pages = _.range(1, pageCount+3)
+
+    const pagination =(pageNo)=>{
+        setcurrentPage(pageNo);
+        const startIndex = (pageNo - 1) * pageSize;
+        const paginatedPosts = _(posts).slice(startIndex).take(pageSize).value()
+        setpaginatedPosts(paginatedPosts)
+    }
+
     return(
-        <div>{
-            !posts ? ("No Data Found"):(
-                <table>
+        <div>
+        {
+            !paginatedPosts ? ("No Data Found"):(
+                <table className="table">
                     <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>Date</th>
+                            {/* <th>ID</th> */}
+                            {/* <th>Date</th> */}
                             <th>Vendor</th>
                             <th>Total</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            posts.map((post, index)=>(
+                            paginatedPosts.map((post, index)=>(
                                 <tr key={index}>
-                                    <td>{post.Date}</td>
+                                    {/* <td>{post.Date}</td> */}
                                     <td>{post.Vendor}</td>
                                     <td>{post.Total}</td>
+                                    <td>
+                                        <p
+                                            className={
+                                                post.completed ? "btn btn-success" : "btn btn-success"
+                                            }
+                                        >
+                                            {post.completed ? "Completed" : "Edit"}
+                                        </p>
+                                    </td>
                                 </tr>
                             ))                               
                         }                      
@@ -44,7 +69,24 @@ const Posts= ()=>{
                     </tbody>
                 </table>
             )
-}
+        }
+        <nav className= "d-flex justify-content-centre "> 
+            <ul className = "pagination">
+                {
+                pages.map((page)=>(
+                    <li className={
+                        page === currentPage? "page-item active":"page-item"
+                    }>
+                        <p className="page-link" 
+                        onClick={()=>pagination(page)}
+                        >{page}</p>
+                    </li>
+                    
+                ))
+                }
+                
+            </ul>
+        </nav>
             
         </div>
     )

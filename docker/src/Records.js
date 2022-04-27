@@ -7,9 +7,12 @@ import ResultGroups from './ResultsGroups'
 
 export default function Records(){
  
-  return<div>Hello </div>
-
-
-  
+  return(
+   <div>Hello </div>
+      
+    
+    
+  )
 }
+
 

@@ -31,7 +31,7 @@ app.post('/tre', (req,res)=> {
 })
 
 app.get('/test',(req,res)=>{
-  let sql = `SELECT * FROM Dockit `
+  let sql = ` SELECT * FROM Dockit ORDER BY ID DESC `
   connection.query(sql,(err,result, fields)=>{
       if(err)throw err
   //    console.log(result)

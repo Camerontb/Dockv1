@@ -14,7 +14,7 @@ class Main extends Component{
                 <Title title="DockIt "/>
                 {/* <CardExampleGroups/> */}
                 <App/>
-                <Posts/>
+                
             </div>
         )
     }
