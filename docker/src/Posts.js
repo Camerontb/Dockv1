@@ -5,6 +5,8 @@ import _ from "lodash"
 // import pagination from "pagination"
 
 
+
+
 const pageSize = 10 
 const Posts= ()=>{
     const [posts , setposts] = useState()
@@ -14,6 +16,7 @@ const Posts= ()=>{
         axios.get('http://192.168.0.8:4000/test')
         .then((res, data)=>{
             console.log(res.data)
+            console.log(res.data.date)
 
             setposts(res.data)
             setpaginatedPosts(_(res.data).slice(0).take(pageSize).value())
@@ -32,7 +35,6 @@ const Posts= ()=>{
         const paginatedPosts = _(posts).slice(startIndex).take(pageSize).value()
         setpaginatedPosts(paginatedPosts)
     }
-
     return(
         <div>
         {
@@ -41,7 +43,7 @@ const Posts= ()=>{
                     <thead>
                         <tr>
                             {/* <th>ID</th> */}
-                            {/* <th>Date</th> */}
+                            <th>Date</th>
                             <th>Vendor</th>
                             <th>Total</th>
                         </tr>
@@ -50,7 +52,7 @@ const Posts= ()=>{
                         {
                             paginatedPosts.map((post, index)=>(
                                 <tr key={index}>
-                                    {/* <td>{post.Date}</td> */}
+                                    <td>{post.Date}</td>
                                     <td>{post.Vendor}</td>
                                     <td>{post.Total}</td>
                                     <td>
@@ -59,7 +61,7 @@ const Posts= ()=>{
                                                 post.completed ? "btn btn-success" : "btn btn-success"
                                             }
                                         >
-                                            {post.completed ? "Completed" : "Edit"}
+                                            {post.completed ? "Completed" : "delete"}
                                         </p>
                                     </td>
                                 </tr>
@@ -91,4 +93,5 @@ const Posts= ()=>{
         </div>
     )
 }
+
 export default Posts
