@@ -2,6 +2,7 @@
 import React, { useEffect,useState} from "react"
 import axios from "axios"
 import _ from "lodash"
+import { Icon } from "semantic-ui-react"
 // import pagination from "pagination"
 
 
@@ -16,11 +17,11 @@ const Posts= ()=>{
         axios.get('http://192.168.0.8:4000/test')
         .then((res, data)=>{
             console.log(res.data)
-            console.log(res.data.date)
+            
 
             setposts(res.data)
             setpaginatedPosts(_(res.data).slice(0).take(pageSize).value())
-
+            // setDel(res.data.date)
         })
 
     },[])
@@ -34,6 +35,21 @@ const Posts= ()=>{
         const startIndex = (pageNo - 1) * pageSize;
         const paginatedPosts = _(posts).slice(startIndex).take(pageSize).value()
         setpaginatedPosts(paginatedPosts)
+    }
+
+    // const delFind=()=>{
+    //     console.log(setDel)
+
+    // }
+
+
+    const deletePost = ()=>{
+        console.log("this is working")
+        axios('http://192.168.0.8:4000/delete')
+        .then((res, data)=>{
+            console.log("your post has been delted")
+        })
+
     }
     return(
         <div>
@@ -56,13 +72,10 @@ const Posts= ()=>{
                                     <td>{post.Vendor}</td>
                                     <td>{post.Total}</td>
                                     <td>
-                                        <p
-                                            className={
-                                                post.completed ? "btn btn-success" : "btn btn-success"
-                                            }
-                                        >
-                                            {post.completed ? "Completed" : "delete"}
-                                        </p>
+                                        <button onClick={deletePost} className="trash" >
+                                            <Icon name = 'trash'></Icon>
+                                       
+                                        </button>
                                     </td>
                                 </tr>
                             ))                               

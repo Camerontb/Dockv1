@@ -6,11 +6,14 @@ import LodgeNew from './LodgeNew';
 import ResultGroups from './ResultsGroups';
 import TableExamplePagination from './Records'
 import Records from './Records';
+import ButtonExampleIcon from "./HomeBtn"
 
 const App =()=>{
 
   return(
     <div>
+      <ButtonExampleIcon/>
+
       <LodgeNew/>
       <ResultGroups/>
       

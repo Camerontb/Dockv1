@@ -1,5 +1,6 @@
 const express = require('express')
 const cors = require('cors')
+const multer = require("multer")
 const bodyParser = require('body-parser')
 const connection = require('./db')
 // const router = express.router()
@@ -40,6 +41,44 @@ app.get('/test',(req,res)=>{
   })
 
 })
+
+app.get('/delete',(req,res)=>{
+  let sql = ` SELECT * FROM Dockit ORDER BY ID DESC `
+  connection.query(sql,(err,result, fields)=>{
+      if(err)throw err
+  //    console.log(result)
+      res.send(result)
+
+  })
+
+})
+
+
+//FILE UPLOAD. 
+
+const fileStorageEngine = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "./images"); //important this is a direct path fron our current file to storage location
+  },
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + "--" + file.originalname);
+  },
+});
+
+const upload = multer({storage:fileStorageEngine})
+
+app.post("/single",upload.single("image"),(req,res)=>{
+  console.log(req,file)
+  res.send("single file uploaded")
+})
+
+// app.post("/single",upload.array("images",3),(req,res)=>{
+//   console.log(req,file)
+//   res.send("single file uploaded")
+// })
+
+
+
 
 
 app.listen(4000,()=>{
