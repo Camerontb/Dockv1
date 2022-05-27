@@ -3,6 +3,11 @@ import { useForm } from 'react-hook-form'
 import { Component } from 'react/cjs/react.production.min'
 import { Button, Checkbox, Form } from 'semantic-ui-react'
 import axios from 'axios'
+
+
+
+
+
 export default function UserForm() {
   const { register, handleSubmit } = useForm()
   const onSubmit = (data) => {
@@ -15,9 +20,12 @@ export default function UserForm() {
     
     
   }
+  const clicks=()=>{
+    console.log('click')
+  }
   return (
     <div>
-      <Form onSubmit={handleSubmit(onSubmit)}>
+      <Form onSubmit={handleSubmit(onSubmit)} action="/stats" enctype="multipart/form-data" method="post">
         <Form.Field>
           <label>Vendor</label>
           <input
@@ -39,14 +47,16 @@ export default function UserForm() {
           />
         </Form.Field>
 
-        <Form.Field>
+        <Form.Field >
           <label>Reciept</label>
-          <input type="file" />
+          <input type="file"/><br></br>
+          <input type="submit" value= "Submit File" {...register(__filename)}/>
+          
         </Form.Field>
 
-        <Button type="submit" {...register('location')}>
+        {/* <Button type="submit" {...register('location')} class="btn btn-default">
           Submit
-        </Button>
+        </Button> */}
       </Form>
     </div>
     
