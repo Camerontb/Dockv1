@@ -12,6 +12,7 @@ export default function UserForm() {
   const { register, handleSubmit } = useForm()
   const onSubmit = (data) => {
     console.log(data)
+    alert(`You've lodged an expanse`)
     axios.post('http://localhost:4000/tre',{
       data
       
@@ -50,7 +51,7 @@ export default function UserForm() {
         <Form.Field >
           <label>Reciept</label>
           <input type="file"/><br></br>
-          <input type="submit" value= "Submit File" {...register(__filename)}/>
+          <input type="submit" value= "Submit File" {...register('filename')}/>
           
         </Form.Field>
 

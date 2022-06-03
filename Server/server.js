@@ -59,11 +59,15 @@ app.get('/delete',(req,res)=>{
 const fileStorageEngine = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, "./images"); 
+    console.log(res)  
+
   },
   filename: (req, file, cb) => {
     cb(null, (`hello1`) + "--" + file.originalname);
+    console.log(res)  
+
   },
-    
+  
   
 });
 
