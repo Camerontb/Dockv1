@@ -1,6 +1,7 @@
 const express = require('express')
 const cors = require('cors')
 const multer = require("multer")
+const upload = multer({ dest: 'uploads/' })
 const bodyParser = require('body-parser')
 const connection = require('./db')
 // const router = express.router()
@@ -54,34 +55,10 @@ app.get('/delete',(req,res)=>{
 })
 
 
-//FILE UPLOAD. 
-
-const fileStorageEngine = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, "./images"); 
-    console.log(res)  
-
-  },
-  filename: (req, file, cb) => {
-    cb(null, (`hello1`) + "--" + file.originalname);
-    console.log(res)  
-
-  },
-  
-  
-});
+//MULTER 
 
 
 
-
-const upload = multer({ storage: fileStorageEngine });
-
-// Single File Route Handler
-app.post("/single", upload.single("image"), (req, res, next) => {
-  
-  console.log(req.file.path)
-  res.send("Your file has been uploaded");
-});
 
 
 app.listen(4000,()=>{

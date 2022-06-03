@@ -14,7 +14,7 @@ const Posts= ()=>{
     const [paginatedPosts, setpaginatedPosts] = useState()
     const [currentPage, setcurrentPage] = useState()
     useEffect(()=>{
-        axios.get('http://192.168.0.8:4000/test')
+        axios.get('http://localhost:4000/test')
         .then((res, data)=>{
             console.log(res.data)
             
@@ -45,7 +45,7 @@ const Posts= ()=>{
 
     const deletePost = ()=>{
         console.log("this is working")
-        axios('http://192.168.0.8:4000/delete')
+        axios('http://localhost:4000/delete')
         .then((res, data)=>{
             console.log("your post has been delted")
         })
